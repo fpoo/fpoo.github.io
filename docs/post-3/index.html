@@ -168,7 +168,10 @@ De bancada o de banco fijo, en este caso, se considera así, porque el husillo p
 <p>Tambien existen las de seis ejes, como evolución de la de cinco debido a una necesidad de tratar objetos más grandes y con formas más complejas.</p>
 <hr>
 <h6 id="para-entender-de-mejor-manera-el-modo-de-operación-del-mecanizado-cnc-lo-verémos-a-través-del-siguiente-ejercicio">Para entender de mejor manera el modo de operación del mecanizado CNC, lo verémos a través del siguiente ejercicio.</h6>
-<h2 id="paso-1-setup">Paso 1: Setup</h2>
+<p>Especificaciones:</p>
+<p>Para la fabricación de la silla Fresia utilizaremos media plancha de terciado (1220mm x 1220mm) de 15mm de grosor y otra plancha de terciado de 9mm de grosor para el asiento de la silla. En este mecanizado configuraremos la máquina para que haga un fresado de 3 ejes con la fresa del tipo Flat end mill:</p>
+<p><img src="/img/mecanizado/tabla.png" alt="Imagen Simple"></p>
+<h2 id="etapa-1-setup">Etapa 1: Setup</h2>
 <ul>
 <li>Primero se debe preparan la plancha de terciado de 1220x1220 mm y de 15 mm de grosor.</li>
 </ul>
@@ -214,7 +217,105 @@ De bancada o de banco fijo, en este caso, se considera así, porque el husillo p
     <source src="/img/Manufacture.mp4"  type="video/mp4">
     </video>
 </div>
-<h2 id="paso-2-fresadora">Paso 2: Fresadora</h2>
+<h2 id="etapa-2-fresadora">Etapa 2: Fresadora</h2>
+<ul>
+<li>2d Contour &gt; Tool &gt; seleccionar la fresadora &ldquo;Flat End Mill&rdquo; de 6mm L22.5 mm.</li>
+<li>seleccionar los bordes interiores de los orificios de cada pieza para realizar el mecanizado interior.</li>
+</ul>
+<div>
+    <video 
+    width="100%" 
+    height="450" 
+    autoplay muted loop controls preload>
+    <source src="/img/fresa1.mp4"  type="video/mp4">
+    </video>
+</div>
+<p>! Debemos tener en cuenta que una fresa de 6mm no puede perforar una plancha de 15mm de una sola pasada porque se puede desgastar o no realizará un trabajo eficiente. Por lo tanto, en &ldquo;Multiple Depths&rdquo; siempre tenemos que definir un Maximum Roughing Stepdown de 3mm para que la fresa realice el calado en 5 pasadas en vez de 1.</p>
+<ul>
+<li>Para arreglar el número de pasadas que da la fresadora se debe hacer click derecho en el contour 2d en la lista izquiera &gt; Edit &gt; Passes &gt; Multiple Depths &gt; cambiar el valor de 1mm a 3mm.</li>
+</ul>
+<div>
+    <video 
+    width="100%" 
+    height="450" 
+    autoplay muted loop controls preload>
+    <source src="/img/fresa2.mp4"  type="video/mp4">
+    </video>
+</div>
+<p>Ahora debemos realizar la hundidura rectangular que va en ambas caras de las piezas:</p>
+<ul>
+<li>2D Menu &gt; 2D Pocket &gt; seleccionar caras superiores de ambas piezas &gt; Passes &gt; Multiple Depths &gt; cambiar el valor de 1mm a 3mm.</li>
+</ul>
+<div>
+    <video 
+    width="100%" 
+    height="450" 
+    autoplay muted loop controls preload>
+    <source src="/img/2dpocket.mp4"  type="video/mp4">
+    </video>
+</div>
+<ul>
+<li>2D Contour &gt; Seleccionar bordes inferiores de cada pieza</li>
+<li>Hacer click derecho sobre la capa 2D contour en la lista &gt; Edit &gt; Passes &gt; Multiple Depths &gt; cambiar el valor de 1mm a 3mm.</li>
+</ul>
+<div>
+    <video 
+    width="100%" 
+    height="450" 
+    autoplay muted loop controls preload>
+    <source src="/img/contour1.mp4"  type="video/mp4">
+    </video>
+</div>
+<p>! Es importante realizar el siguiente paso en donde se agregan las &ldquo;Tabs&rdquo; al cortar los bordes exteriores, ya que estas permiten que no se suelte por completo la pieza mientras la fresadora sigue cortando.</p>
+<ul>
+<li>Desplegar el menu de la capa del contour &gt; Edit &gt; Geometry &gt; Tabs &gt; Cambiar el valor de Tab Height de 1mm a 3mm y la distancia entre los Tabs de 48mm a 350mm</li>
+</ul>
+<div>
+    <video 
+    width="100%" 
+    height="450" 
+    autoplay muted loop controls preload>
+    <source src="/img/tabs.mp4"  type="video/mp4">
+    </video>
+</div>
+<p>! La forma de &ldquo;orejas que tienen los orificios se debe a que la fresa necesariamente hará una forma circular si se hace en medio de la pieza debido a que para hacer el corte debe girar. Esto produce que todas las formas que se hagan por dentro sean curvas y jamás formas rectas.</p>
+<p>En cambio, cuando es por fuera de la figura esta sí puede hacer cortes rectos.</p>
+<h2 id="etapa-3-trazado">Etapa 3: Trazado</h2>
+<p>Algunas piezas necesitan ser trazadas para podoer darles flexibilidad y curvarlas. En este caso, el asiento de la silla Fresia necesitaría ser trazada para lograr la curva que tiene al borde.</p>
+<div>
+    <video 
+    width="100%" 
+    height="450" 
+    autoplay muted loop controls preload>
+    <source src="/img/asiento.mp4"  type="video/mp4">
+    </video>
+</div>
+<p>Para lograr esto debemos:</p>
+<ul>
+<li>Realizar un sketch al igual que en la etapa 1 para formar el terciado &gt; extrude de 9mm.</li>
+<li>Design &gt; Manufacture &gt; Desplegar menu 2D &gt; Trace.</li>
+<li>una vez en trace, se deben configurar los valores</li>
+<li>Orientation &gt; Select Z axis/ plane &amp; X axis</li>
+<li>Box Point &gt; borde superior izquierdo</li>
+<li>Stock &gt; Mode &gt; From Solid &gt; seleccionar el terciado extruido</li>
+<li>Model &gt; seleccionar el asiento</li>
+<li>2D Contour &gt; seleccionar borde inferior &gt; Passes &gt; Multiple Depths &gt; cambiar el valor de maximum Roughing de 1mm a 3mm</li>
+<li>Se utiliza la misma fresa que antes</li>
+<li>Desplegar menu 2D &gt; Trace &gt;
+<img src="/img/mecanizado/asiento.png" alt="Imagen Simple"></li>
+</ul>
+<h2 id="visualizador-3d">Visualizador 3D</h2>
+<div>
+    <iframe 
+    src='https://alumnos4812.autodesk360.com/g/shares/SH56a43QTfd62c1cd968e54a21ba61c01bd1?mode=embed'
+    width="100%" 
+    height="450" 
+    allowfullscreen="true" 
+    webkitallowfullscreen="true" 
+    mozallowfullscreen="true"  
+    frameborder="0">
+    </iframe>    
+</div>
 
 </div>
 </div>
