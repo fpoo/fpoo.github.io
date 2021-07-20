@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>3. Mecanizacion 2.5 ejes - Fernanda Poo Cortes- Taller Fabricación 2021</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="icon" href="https://fpoo.github.io/favicon.png">
+
+  
+  
+  <link rel="stylesheet" href="/css/style.min.a32658f2eedb9bb852f8513925cb445e40633983f1ff54349b037dd04eafa2fa.css">
+  
+
+  
+
+</head>
+
+<body class='page page-default-single'>
+  <div id="main-menu-mobile" class="main-menu-mobile">
+  <ul>
+    
+    
+    <li class="menu-item-inicio">
+      <a href="/">
+        <span>Inicio</span>
+      </a>
+    </li>
+    
+    <li class="menu-item-dococumentación">
+      <a href="/docs/">
+        <span>Dococumentación</span>
+      </a>
+    </li>
+    
+  </ul>
+</div>
+  <div class="wrapper">
+    <div class='header'>
+  <div class="container">
+    <div class="logo">
+      <a href="https://fpoo.github.io/"><img alt="Logo" src="/images/logo-uai.png" /></a>
+    </div>
+    <div class="logo-mobile">
+      <a href="https://fpoo.github.io/"><img alt="Logo" src="/images/logo-uai.png" /></a>
+    </div>
+    <div id="main-menu" class="main-menu">
+  <ul>
+    
+    
+    <li class="menu-item-inicio">
+      <a href="/">
+        <span>Inicio</span>
+      </a>
+    </li>
+    
+    <li class="menu-item-dococumentación">
+      <a href="/docs/">
+        <span>Dococumentación</span>
+      </a>
+    </li>
+    
+  </ul>
+</div>
+    <button id="toggle-main-menu-mobile" class="hamburger hamburger--slider" type="button">
+  <span class="hamburger-box">
+    <span class="hamburger-inner"></span>
+  </span>
+</button>
+  </div>
+</div>
+
+
+    
+    
+    
+    
+    
+    
+
+    
+    <div class="container pt-2 pt-md-6 pb-3 pb-md-6">
+      <div class="row">
+        <div class="col-12 col-md-3 mb-3">
+          <div class="sidebar">
+            
+<div class="docs-menu">
+  <h4>Docs</h4>
+  <ul>
+    
+    <li class="">
+      <a href="https://fpoo.github.io/docs/post-1/">0.Fabricación Digital</a>
+    </li>
+    
+    <li class="">
+      <a href="https://fpoo.github.io/docs/post-2/">1.Planimetrías</a>
+    </li>
+    
+    <li class="">
+      <a href="https://fpoo.github.io/docs/post-3/">2. Mecanizado CNC</a>
+    </li>
+    
+    <li class="active ">
+      <a href="https://fpoo.github.io/docs/post-4/">3. Mecanizacion 2.5 ejes</a>
+    </li>
+    
+    <li class="">
+      <a href="https://fpoo.github.io/docs/ejemplo/">Ejemplo Shortcodes</a>
+    </li>
+    
+    <li class="">
+      <a href="https://fpoo.github.io/docs/markdown/">Ejemplos Markdown</a>
+    </li>
+    
+  </ul>
+</div>
+
+          </div>
+        </div>
+        <div class="col-12 col-md-9">
+          
+<h1 class="title">3. Mecanizacion 2.5 ejes</h1>
+<div class="content ">
+  <p>Para el siguiente ejercicio se explicarán los pasos para realizar un mecanizado 2,5 ejes de desplazamiento de una máquina CNC para generar la curvatura del respaldo en la Silla Fresia. Utilizaremos el software Fusion 360 para elaborar el proceso.</p>
+<h2 id="qué-es-el-mecanizado-25-d">¿Qué es el mecanizado 2,5 D?</h2>
+<p>En un mecanizado por corte de 2,5 ejes, la fresadora se puede llegar a mover en un máximo de 3 ejes de la máquina (X,Y,Z), pero nunca se moverá en las tres coordenadas a la vez durante la trayectoria de corte. Los mecanizados 2,5 se emplean fundamentalmente cuando la geometría es sencilla y para desbastar grandes cantidades de material de forma uniforme.</p>
+<h2 id="respaldo-silla-fresia">Respaldo Silla Fresia</h2>
+<div>
+    <iframe 
+    src='https://alumnos4812.autodesk360.com/g/shares/SH56a43QTfd62c1cd96896dff1c81ea7e471?mode=embed'
+    width="100%" 
+    height="450" 
+    allowfullscreen="true" 
+    webkitallowfullscreen="true" 
+    mozallowfullscreen="true"  
+    frameborder="0">
+    </iframe>    
+</div>
+<h2 id="paso-1-exportación-a-fusion-360">Paso 1: exportación a Fusion 360</h2>
+<p>Primero debemos &ldquo;aislar&rdquo; el respaldo de la Silla Fresia para trabajar mejor. Para esto, vamos a mano izquierda para hacer click derecho sobre la pestaña <code>BODIES</code>, donde elegimos la opción <code>Create Components from Bodies</code>. Luego hacemos click derecho sobre el nuevo componente, pinchamos <code>EXPORT</code> y la guardamos en el computador.
+Posteriormente, abrimos el archivo del respaldo recientemente guardado.</p>
+<div>
+    <video 
+    width="100%" 
+    height="450" 
+    autoplay muted loop controls preload>
+    <source src="/img/export.mp4"  type="video/mp4">
+    </video>
+</div>
+<h3 id="12-orientar-la-pieza">1.2 Orientar la pieza</h3>
+<p>Una vez importado el respaldo, nos debemos preocupar de que esta quede ortogonal y horizontal a los planos del programa a través del comando “Move” y “Align”.</p>
+<p><img src="/img/2.5/1.png" alt="Imagen Simple"></p>
+<h2 id="paso-2-setup">Paso 2: Setup</h2>
+<p>Para realizar el terciado del cual se extraerá la madera para formar el respaldo, vamos a hacer un <code>SKETCH</code> más grueso que la madera. Extruimos el plano de modo que el respaldo quede completamente contenido en el bloque. Para finalizar hacemos click derecho en <code>OPERATION</code>, luego en “New Body” y para poder ver la figura que quedo en su interior le bajamos la opacidad al stock a un 20%.</p>
+<p><img src="/img/2.5/2.png" alt="Imagen Simple"></p>
+<h3 id="22-definir-límites-para-la-máquina">2.2 Definir límites para la máquina</h3>
+<p>Aplicamos nuevamente el comando <code>SKETCH</code>, seleccionamos el plano superior del bloque de madera. Después para delimitar el área exacta de trabajo vamos a la barra superior en “Create” y seleccionamos “Project / Include”, luego “Project” y le hacemos click al respaldo para que se proyecte en el stock, o también solo apretar la tecla P.</p>
+<p><img src="/img/2.5/3.png" alt="Imagen Simple"></p>
+<h2 id="paso-3-manufactura">Paso 3: Manufactura</h2>
+<p>Debemos estar en el espacio de trabajo <code>MANUFACTURE</code> para poder hacer el <code>SETUP</code>. Una vez en el menu del Setup se debe seleccionar la “Generic 3 Axis”, y en la configuración de esta nos dirigimos a la ventana de stock y elegimos modo “solid”, seleccionando el stock previamente creado. En cuanto al modelo de orientación se debe establecer el “Select Z axis/plane &amp; Y axis” seleccionando como Z axis la cara superior del sólido, el eje x de esta y en stock point será el punto superior de la esquina más cercana al origen. Por último en model seleccionamos el respaldo.</p>
+<p>En este caso se debe seleccionar la Fresa de “6 mm Falt Endmill” ocupada en trabajos anteriores, pero modificándole su “Lenght below holder” de 22,5 a 40, para que la fresa no choque con la estructura que está cortando. Una vez establecida la fresa determinamos cual será el “Machine Boundary”, siendo este el creado en el paso 2.2. En cuanto al modelo, seleccionamos el respaldo. Además, se debe modificar el Optimal Load de 6mm a 3mm.
+En segundo lugar, en “Operation Type” seleccionamos la unidad en la que vamos a operar que se denomina “Milling”.</p>
+<h3 id="32-adaptive-clearing">3.2 Adaptive Clearing</h3>
+<p>El Adaptive Clearing será la primera trayectoria que ejecutaremos. Esta sirve para remover material de la pieza y así poder acelerar el proceso y reducir los tiempos de obtención del respaldo, es decir hacer un desbaste.</p>
+<p><img src="/img/2.5/4.png" alt="Imagen Simple"></p>
+<p>Para este paso vamos al menu de <code>Adaptive Clearing</code>. Seleccionamos la fresadora de 6mm Flat End Mill en &ldquo;Tool&rdquo;.
+Vamos a &ldquo;Geometry&rdquo; y en &ldquo;Machining Boundary&rdquo; seleccionamos el rectangulo realizado en el paso 2.2 (ver imagen). Posteriormente en &ldquo;Model&rdquo; escogemos el respaldo.</p>
+<p><img src="/img/2.5/6.png" alt="Imagen Simple"></p>
+<p>Las líneas azules que vemos en el video son todas las trayectorías por dónde pasará la fresa y removerá toda esa madera de manera bruta, sin una terminación prolija. En la simulación se puede ver como fresadora entra en el material desde el centro haciendo una elipse, esto sirve para disminuir el estrés de la máquina. Lo cual se usa mucho para metales y también funciona de manera adecuada en maderas.</p>
+<div>
+    <video 
+    width="100%" 
+    height="450" 
+    autoplay muted loop controls preload>
+    <source src="/img/adaptive.mp4"  type="video/mp4">
+    </video>
+</div>
+<h2 id="paso-4-parallel">Paso 4: Parallel</h2>
+<p>Esta función sirve para darle una terminación paralela y continua al calado. En la pestaña que se despliega a mano derecha, en la pestaña “Tool” haremos un cambio respecto al paso anterior y seleccionaremos la fresa de punta redonda llamada “Ball end mill. 6mm de diámetro” la cual modificaremos de la misma forma que la otra fresa en “Tool Library” para que tenga un largo de 40mm.</p>
+
+</div>
+</div>
+
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+  
+
+  
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/scripts.min.eaf147370baecdd07c022597db631f99cab1c9cd6479de586f30327a568d6a0f.js"></script>
+  
+
+  
+  
+  
+    
+  
+
+
+</body>
+
+</html>
