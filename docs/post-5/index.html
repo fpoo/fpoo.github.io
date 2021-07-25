@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>4. Simulación y Diseño Generativo - Fernanda Poo Cortes- Taller Fabricación 2021</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="icon" href="https://fpoo.github.io/favicon.png">
+
+  
+  
+  <link rel="stylesheet" href="/css/style.min.a32658f2eedb9bb852f8513925cb445e40633983f1ff54349b037dd04eafa2fa.css">
+  
+
+  
+
+</head>
+
+<body class='page page-default-single'>
+  <div id="main-menu-mobile" class="main-menu-mobile">
+  <ul>
+    
+    
+    <li class="menu-item-inicio">
+      <a href="/">
+        <span>Inicio</span>
+      </a>
+    </li>
+    
+    <li class="menu-item-dococumentación">
+      <a href="/docs/">
+        <span>Dococumentación</span>
+      </a>
+    </li>
+    
+  </ul>
+</div>
+  <div class="wrapper">
+    <div class='header'>
+  <div class="container">
+    <div class="logo">
+      <a href="https://fpoo.github.io/"><img alt="Logo" src="/images/logo-uai.png" /></a>
+    </div>
+    <div class="logo-mobile">
+      <a href="https://fpoo.github.io/"><img alt="Logo" src="/images/logo-uai.png" /></a>
+    </div>
+    <div id="main-menu" class="main-menu">
+  <ul>
+    
+    
+    <li class="menu-item-inicio">
+      <a href="/">
+        <span>Inicio</span>
+      </a>
+    </li>
+    
+    <li class="menu-item-dococumentación">
+      <a href="/docs/">
+        <span>Dococumentación</span>
+      </a>
+    </li>
+    
+  </ul>
+</div>
+    <button id="toggle-main-menu-mobile" class="hamburger hamburger--slider" type="button">
+  <span class="hamburger-box">
+    <span class="hamburger-inner"></span>
+  </span>
+</button>
+  </div>
+</div>
+
+
+    
+    
+    
+    
+    
+    
+
+    
+    <div class="container pt-2 pt-md-6 pb-3 pb-md-6">
+      <div class="row">
+        <div class="col-12 col-md-3 mb-3">
+          <div class="sidebar">
+            
+<div class="docs-menu">
+  <h4>Docs</h4>
+  <ul>
+    
+    <li class="">
+      <a href="https://fpoo.github.io/docs/post-1/">0.Fabricación Digital</a>
+    </li>
+    
+    <li class="">
+      <a href="https://fpoo.github.io/docs/post-2/">1.Planimetrías</a>
+    </li>
+    
+    <li class="">
+      <a href="https://fpoo.github.io/docs/post-3/">2. Mecanizado CNC</a>
+    </li>
+    
+    <li class="">
+      <a href="https://fpoo.github.io/docs/post-4/">3. Mecanizacion 2.5 ejes</a>
+    </li>
+    
+    <li class="active ">
+      <a href="https://fpoo.github.io/docs/post-5/">4. Simulación y Diseño Generativo</a>
+    </li>
+    
+    <li class="">
+      <a href="https://fpoo.github.io/docs/markdown/">Ejemplos Markdown</a>
+    </li>
+    
+    <li class="">
+      <a href="https://fpoo.github.io/docs/ejemplo/">Ejemplo Shortcodes</a>
+    </li>
+    
+  </ul>
+</div>
+
+          </div>
+        </div>
+        <div class="col-12 col-md-9">
+          
+<h1 class="title">4. Simulación y Diseño Generativo</h1>
+<div class="content ">
+  <p>En el siguiente ejercicio podremos entender de una manera más analítica el diseño de un objeto, sus potenciales problemas y posteriormente, realizar una propuesta de diseño generativo a través de una simulación. Para entender mejor este caso, lo veremos con el ala de un avión.</p>
+<h3 id="visualizador-3d">Visualizador 3D</h3>
+<div>
+    <iframe 
+    src='https://alumnos4812.autodesk360.com/g/shares/SH56a43QTfd62c1cd968c84ab7ea9868a7b8?mode=embed'
+    width="100%" 
+    height="450" 
+    allowfullscreen="true" 
+    webkitallowfullscreen="true" 
+    mozallowfullscreen="true"  
+    frameborder="0">
+    </iframe>    
+</div>
+<hr>
+<p>Archivo Fusion 360 del ala completa:</p>
+<a class="face-button" href="/descargas/Ala_completa.f3d" download>
+    <div class="face-primary">
+        <span class="icon fa fa-cloud"></span>
+        Descargar
+    </div>
+    <div class="face-secondary">
+        <span class="icon fa fa-hdd-o"></span>
+    </div>
+</a>
+
+
+<hr>
+<p>Archivo Fusion 360 de la pieza aislada:</p>
+<a class="face-button" href="/descargas/Ala_sola.f3d" download>
+    <div class="face-primary">
+        <span class="icon fa fa-cloud"></span>
+        Descargar
+    </div>
+    <div class="face-secondary">
+        <span class="icon fa fa-hdd-o"></span>
+    </div>
+</a>
+
+
+<hr>
+<p>En este caso, podríamos decir por ejemplo, que la materialidad de las piezas del ala del avión no son lo suficientemente livianas.</p>
+<h1 id="pasos">Pasos:</h1>
+<h2 id="simulación">Simulación</h2>
+<p>Antes de comenzar a hacer modificaciones debemos entender cómo esta compuesta el ala y ver que pieza en específico es más viable de optimizar.</p>
+<p>Posteriormente, debemos aislar la pieza con la cual vamos a trabajar, en este caso será el perfil alar (las piezas grises que se pueden ver en el Ifram de Fusion 360), ya que es la que más se repite y afecta al funcionamiento del ala.</p>
+<p>Ir al espacio de trabajo <code>SIMULATION</code> &gt; <code>STUDY</code>, en este último seleccionamos la opción &ldquo;Static Stress&rdquo;</p>
+<p><img src="/img/simulacion/stress.png" alt="Imagen Simple"></p>
+<p>En las capas de la izquierda seleccionar &ldquo;Study 3 - Static Stress&rdquo;. luego ir a <code>CONSTRAINTS</code> en el menú superior.</p>
+<p><img src="/img/simulacion/constraints.png" alt="Imagen Simple"></p>
+<p>Luego, debemos escoger las caras que serán las &ldquo;constraints&rdquo;, es decir, las partes que se dejarán fijas y ancladas al resto del ala, por lo cual no pueden sufrir alteraciones en nuestra simulación. En este caso son las caras que van conectadas al perfil de ataque y el de salida:</p>
+<p><img src="/img/simulacion/1.png" alt="Imagen Simple"></p>
+<p><img src="/img/simulacion/2.png" alt="Imagen Simple"></p>
+<p><img src="/img/simulacion/constraintss.png" alt="Imagen Simple"></p>
+<h2 id="loads-cargas">Loads (cargas)</h2>
+<p>En el menú del espacio de trabajo nos vamos a <code>LOADS</code>, esto nos permitirá determinar el peso en Newtons que puede soportar esta pieza. Seleccionamos la cara inferior y ponemos el valor de 1000 Newtons (N), el cual es equivalente a 100 Kilos aproximadamente.</p>
+<p><img src="/img/simulacion/loads.png" alt="Imagen Simple"></p>
+<p>Luego seleccionamos la opción <code>PRE-CHECK</code> para cerciorarse de que los datos que estamos ingresando en nuestra simulación esten correctos y completos. Si al seleccionar <code>PRE-CHECK</code>nos arroja el siguiente mensaje:</p>
+<blockquote>
+<p>&ldquo;The study setup has all the information required&rdquo;</p>
+</blockquote>
+<p>entonces podemos continuar. Si fuera el caso contrario, debemos revisar que los datos ingresados en el paso del setup de la opción <code>STUDY</code> esten todos correctos.</p>
+<h2 id="solve">Solve</h2>
+<p>Seleccionamos la opción <code>SOLVE</code> en donde nos abrirá una nueva ventana que nos muestra los estudios del documento sobre el cual estamos trabajando. Apretamos &ldquo;Solve&rdquo; y esperamos un par de minutos hasta que el programa finalicé.
+Lo que <code>SOLVE</code> logra hacer es una simulación basandose en los ajustes que nosotros especifiquemos.</p>
+<p><img src="/img/simulacion/solve.png" alt="Imagen Simple"></p>
+<p>Como podemos ver en la imagen, lo que esta opción nos permite visualizar es la deformación que le ocurre a esta pieza al ejercer un peso de 1000 N. La parte que nos apunta la flecha azul es la que más deformación tiene y considerando que esta es la pieza de un ala de avión, puede implicar un gran peligro al momento del vuelo.</p>
+<p>La barra de colores que podemos ver al costado derecho es un indicador de las zonas que menos deformación tienen (azul) y de aquellas que se ven más afectadas con el peso (rojo)</p>
+<div>
+    <video 
+    width="100%" 
+    height="450" 
+    autoplay muted loop controls preload>
+    <source src="/img/riesgos.mp4"  type="video/mp4">
+    </video>
+</div>
+<p>Para salir de esta simulación solo apretamos <code>FINISH RESULTS</code>.</p>
+<p><a href="#top">[Volver Arriba]</a></p>
+<hr>
+<h1 id="diseño-generativo">Diseño Generativo</h1>
+<p>Para realizar esta estapa, debemos ir al panel de datos en la esquina superior izquierda, vamos a la sección &ldquo;Samples&rdquo; y seleccionamos la opción <code>GENERATIVE DESIGN SAMPLES</code></p>
+<p><img src="/img/simulacion/design.png" alt="Imagen Simple"></p>
+<p>Luego, se despliegarán opciones de diseños generativos y escogemos el archivo <code>GE Bracket</code></p>
+<p><img src="/img/simulacion/ge.png" alt="Imagen Simple"></p>
+<p>Posteriormente, abrimos el espacio de <code>GENERATIVE DESIGN</code></p>
+<p>Debido a que este es un archivo de Fusion 360 no podemos editarlo y en la ventana en donde aparece el nombre de nuestro arcivo se mostrará un candado. Para solucionar esto solo debemos guardar este archivo en <code>Save As</code>, escogemos el lugar y ya estaría listo para poder editarlo.</p>
+<h2 id="preservar-geometrías">Preservar Geometrías</h2>
+<p>Este paso es importante para que los anclajes de pernos mantengan sus formas.</p>
+<p>Selelccionamos la opción <code>PRESERVE GEOMETRY</code></p>
+<p><img src="/img/simulacion/preserve.png" alt="Imagen Simple"></p>
+<p>y luego escogemos los anclajes anteriormente mencionados (en la siguiente foto serían los que estan de color verde)</p>
+<p><img src="/img/simulacion/geometry.png" alt="Imagen Simple"></p>
+<h2 id="geometrías-obstaculo">Geometrías Obstaculo</h2>
+<p>La segunda condición de nuestro diseño generativo son las geometrías obstaculo.
+Esta opción esta justo al lado de <code>PRESERVE GEOMETRY</code>(vendría a ser la cajita con la mitad roja en el espacio de &ldquo;DESIGN SPACE&rdquo;). Lo que esta opción nos permite es que no se genere material en ciertas partes, ya que de otra manera impediría el movimiento.</p>
+<div>
+    <video 
+    width="100%" 
+    height="450" 
+    autoplay muted loop controls preload>
+    <source src="/img/obstaculo.mp4"  type="video/mp4">
+    </video>
+</div>
+<h2 id="condiciones-de-diseño">Condiciones de Diseño</h2>
+<p>En esta parte definiremos características como zonas de anclaje y de fuerzas ejercidas. Este paso es muy importante ya que nos permitirá que estas zonas se mantengan fijas y no sean modificadas al final.</p>
+<p>Vamos a la opción <code>STRUCTURAL CONSTRAINTS</code> para fijar la base de los cilindros y que estos no se muevan de la estructura base.</p>
+<p>Luego debemos definir las zonas en las cuales se va a ejercer fuerzas y peso. Seleccionamos la opción <code>STRUCTURAL LOADS</code>, seleccionamos el interior de la base de las dos tuercas verticales, en &ldquo;Direction Reference&rdquo; apretamos la opción &ldquo;Vectors (x,y,z) e incertamos el valor de 1000 N (100 kgs) en &ldquo;Fz&rdquo;. Notaremos que las flechas van en dirección hacía arriba, sin embargo el peso que se está ejerciendo es hacia abajo. Para arreglar esto, solo debemos poner un signo negativo antes del valor en Newtons dado anteriormente, es decir, -1000 N.</p>
+<p>Apretamos <code>OK</code> para finalizar</p>
+<div>
+    <video 
+    width="100%" 
+    height="450" 
+    autoplay muted loop controls preload>
+    <source src="/img/pesos.mp4"  type="video/mp4">
+    </video>
+</div>
+<h2 id="design-criteria-objetivos">Design Criteria: Objetivos</h2>
+<p><img src="/img/simulacion/objectives.png" alt="Imagen Simple"></p>
+<p>Seleccionamos la opción <code>OBJECTIVES</code> y luego &ldquo;Minimize Mass&rdquo;</p>
+<p>En &ldquo;Limits&rdquo; ponemos un Safety Factor de 2</p>
+<p>Luego, seleccionamos la opción <code>MANUFACTURING</code>justo al lado de <code>OBJECTIVES</code>, apretamos la casilla de  &ldquo;Cost Estimation, con un volumen de producción de 2500 pcs, en la sección de &ldquo;Additive&rdquo; el ángulo debe ser de 45º grados y el grosor minimo (Minimum Thickness) de 3mm.</p>
+<p><img src="/img/simulacion/manuf.png" alt="Imagen Simple"></p>
+<p>Posterior a escoger los materiales que deseemos para nuestro diseño, generamos una preview con la opción <code>PREVIEWER</code>que comenzará a formar la pieza en base a todo lo que hemos realizado.</p>
+<p>El programa comenzará a formar algo como esto en la previsualización:</p>
+<p><img src="/img/simulacion/preview.png" alt="Imagen Simple"></p>
+
+</div>
+</div>
+
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+  
+
+  
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/scripts.min.eaf147370baecdd07c022597db631f99cab1c9cd6479de586f30327a568d6a0f.js"></script>
+  
+
+  
+  
+  
+    
+  
+
+
+</body>
+
+</html>

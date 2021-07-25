@@ -107,11 +107,15 @@
     </li>
     
     <li class="">
-      <a href="https://fpoo.github.io/docs/ejemplo/">Ejemplo Shortcodes</a>
+      <a href="https://fpoo.github.io/docs/post-5/">4. Simulación y Diseño Generativo</a>
     </li>
     
     <li class="">
       <a href="https://fpoo.github.io/docs/markdown/">Ejemplos Markdown</a>
+    </li>
+    
+    <li class="">
+      <a href="https://fpoo.github.io/docs/ejemplo/">Ejemplo Shortcodes</a>
     </li>
     
   </ul>
@@ -138,6 +142,20 @@
     frameborder="0">
     </iframe>    
 </div>
+<hr>
+<p>Archivo del respaldo aislado:</p>
+<a class="face-button" href="/descargas/Respaldo.f3d" download>
+    <div class="face-primary">
+        <span class="icon fa fa-cloud"></span>
+        Descargar
+    </div>
+    <div class="face-secondary">
+        <span class="icon fa fa-hdd-o"></span>
+    </div>
+</a>
+
+
+<hr>
 <h2 id="paso-1-exportación-a-fusion-360">Paso 1: exportación a Fusion 360</h2>
 <p>Primero debemos &ldquo;aislar&rdquo; el respaldo de la Silla Fresia para trabajar mejor. Para esto, vamos a mano izquierda para hacer click derecho sobre la pestaña <code>BODIES</code>, donde elegimos la opción <code>Create Components from Bodies</code>. Luego hacemos click derecho sobre el nuevo componente, pinchamos <code>EXPORT</code> y la guardamos en el computador.
 Posteriormente, abrimos el archivo del respaldo recientemente guardado.</p>
@@ -166,7 +184,7 @@ En segundo lugar, en “Operation Type” seleccionamos la unidad en la que vamo
 <p>El Adaptive Clearing será la primera trayectoria que ejecutaremos. Esta sirve para remover material de la pieza y así poder acelerar el proceso y reducir los tiempos de obtención del respaldo, es decir hacer un desbaste.</p>
 <p><img src="/img/2.5/4.png" alt="Imagen Simple"></p>
 <p>Para este paso vamos al menu de <code>Adaptive Clearing</code>. Seleccionamos la fresadora de 6mm Flat End Mill en &ldquo;Tool&rdquo;.
-Vamos a &ldquo;Geometry&rdquo; y en &ldquo;Machining Boundary&rdquo; seleccionamos el rectangulo realizado en el paso 2.2 (ver imagen). Posteriormente en &ldquo;Model&rdquo; escogemos el respaldo.</p>
+Vamos a <code>Geometry</code> y en &ldquo;Machining Boundary&rdquo; seleccionamos el rectangulo realizado en el paso 2.2 (ver imagen). Posteriormente en &ldquo;Model&rdquo; escogemos el respaldo.</p>
 <p><img src="/img/2.5/6.png" alt="Imagen Simple"></p>
 <p>Las líneas azules que vemos en el video son todas las trayectorías por dónde pasará la fresa y removerá toda esa madera de manera bruta, sin una terminación prolija. En la simulación se puede ver como fresadora entra en el material desde el centro haciendo una elipse, esto sirve para disminuir el estrés de la máquina. Lo cual se usa mucho para metales y también funciona de manera adecuada en maderas.</p>
 <div>
@@ -178,7 +196,28 @@ Vamos a &ldquo;Geometry&rdquo; y en &ldquo;Machining Boundary&rdquo; seleccionam
     </video>
 </div>
 <h2 id="paso-4-parallel">Paso 4: Parallel</h2>
-<p>Esta función sirve para darle una terminación paralela y continua al calado. En la pestaña que se despliega a mano derecha, en la pestaña “Tool” haremos un cambio respecto al paso anterior y seleccionaremos la fresa de punta redonda llamada “Ball end mill. 6mm de diámetro” la cual modificaremos de la misma forma que la otra fresa en “Tool Library” para que tenga un largo de 40mm.</p>
+<p><img src="/img/2.5/parallel.png" alt="Imagen Simple"></p>
+<p>Esta función sirve para darle una terminación paralela y continua al calado. En la pestaña que se despliega a mano derecha, en la pestaña “Tool” haremos un cambio respecto al paso anterior y podemos seleccionar la misma fresa de antes o una de punta redonda llamada “Ball end mill. 6mm de diámetro” la cual modificaremos en “Tool Library” para que tenga un largo de 40mm y no tope al cortar.</p>
+<p>Posteriormente, en &ldquo;Machining Boundary&rdquo; hacemos la selección del rectangulo interior para que solo trabaje en el área interior y para finalizar seleccionamos el modelo (Respaldo). Debemos tomar en cuenta que NO debemos incluir el Setup Model, ya que de otra manera, la fresadora no trabajará en el respaldo.</p>
+<p><img src="/img/2.5/parallel1.png" alt="Imagen Simple"></p>
+<p><img src="/img/2.5/respaldo2.jpeg" alt="Imagen Simple"></p>
+<h3 id="42-segundo-parallel">4.2 Segundo Parallel</h3>
+<p>Este paso se realiza para que el desbaste pase en la otra dirección que el parallel anterior, es decir, de manera perpendicular, de tal manera que se forma un recorrido con forma de &ldquo;grilla&rdquo; en el respaldo.
+Para esto, duplicamos el primer <code>PARALLEL</code>haciendo doble click en la capa y seleccionando <code>DUPLICATE</code>. Para que las líneas queden en ángulo perpendicular se debe cambiar el &ldquo;Pass Direction&rdquo; de 0 deg a 90 deg, y bajar el &ldquo;stepover&rdquo; de 3mm a 2mm, para lograr así una mejor resolución superficial.</p>
+<p><img src="/img/2.5/parallel2.png" alt="Imagen Simple">
+<img src="/img/2.5/respaldo3.jpeg" alt="Imagen Simple"></p>
+<p>Una vez terminado el proceso de desbaste y el de las terminaciones paralelas para la superficie superior del respaldo, se deben volver a ejecutar los pasos antes mencionados, ya que la mecanización que estamos realizando es en 2,5 D, lo cual implica que deberíamos &ldquo;girar&rdquo; la pieza para trabajar el otro.</p>
+<p><img src="/img/2.5/posterior.png" alt="Imagen Simple"></p>
+<h2 id="pasos-finales">Pasos Finales</h2>
+<p>Para finalizar el respaldo, se debe sacar de la fresadora y comenzar a lijar para hacer una terminación más lisa y desastillada.</p>
+<p><img src="/img/2.5/real1.jpeg" alt="Imagen Simple"></p>
+<p><img src="/img/2.5/real2.jpeg" alt="Imagen Simple"></p>
+<p>Luego, se adhieren las partes prensándolas con pegamento:</p>
+<p><img src="/img/2.5/real3.jpeg" alt="Imagen Simple"></p>
+<p><img src="/img/2.5/real4.jpeg" alt="Imagen Simple"></p>
+<h2 id="silla-fresia-terminada">Silla Fresia Terminada</h2>
+<p><img src="/img/2.5/real.jpeg" alt="Imagen Simple"></p>
+<p><img src="/img/2.5/realfinal.jpeg" alt="Imagen Simple"></p>
 
 </div>
 </div>

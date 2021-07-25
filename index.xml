@@ -44,12 +44,12 @@
     </item>
     
     <item>
-      <title>Ejemplo Shortcodes</title>
-      <link>https://fpoo.github.io/docs/ejemplo/</link>
+      <title>4. Simulación y Diseño Generativo</title>
+      <link>https://fpoo.github.io/docs/post-5/</link>
       <pubDate>Wed, 17 Jun 2020 19:30:08 +1000</pubDate>
       
-      <guid>https://fpoo.github.io/docs/ejemplo/</guid>
-      <description>Uso de los Shortcodes para agregar contenido en el sitio de documentación.</description>
+      <guid>https://fpoo.github.io/docs/post-5/</guid>
+      <description>En el siguiente ejercicio podremos entender de una manera más analítica el diseño de un objeto, sus potenciales problemas y posteriormente, realizar una propuesta de diseño generativo a través de una simulación.</description>
     </item>
     
     <item>
@@ -59,6 +59,15 @@
       
       <guid>https://fpoo.github.io/docs/markdown/</guid>
       <description>Ejemplos de uso de lenguaje Markdown para redactar las publicaciones.</description>
+    </item>
+    
+    <item>
+      <title>Ejemplo Shortcodes</title>
+      <link>https://fpoo.github.io/docs/ejemplo/</link>
+      <pubDate>Wed, 17 Jun 2020 19:30:08 +1000</pubDate>
+      
+      <guid>https://fpoo.github.io/docs/ejemplo/</guid>
+      <description>Uso de los Shortcodes para agregar contenido en el sitio de documentación.</description>
     </item>
     
   </channel>
