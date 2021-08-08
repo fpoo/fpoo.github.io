@@ -49,7 +49,7 @@
       <pubDate>Wed, 17 Jun 2020 19:30:08 +1000</pubDate>
       
       <guid>https://fpoo.github.io/docs/post-5/</guid>
-      <description>En el siguiente ejercicio podremos entender de una manera más analítica el diseño de un objeto, sus potenciales problemas y posteriormente, realizar una propuesta de diseño generativo a través de una simulación.</description>
+      <description>Diseño Generativo como herramienta del diseño del futuro.</description>
     </item>
     
     <item>
@@ -59,6 +59,15 @@
       
       <guid>https://fpoo.github.io/docs/markdown/</guid>
       <description>Ejemplos de uso de lenguaje Markdown para redactar las publicaciones.</description>
+    </item>
+    
+    <item>
+      <title>5. Impresión 3D</title>
+      <link>https://fpoo.github.io/docs/post-6/</link>
+      <pubDate>Wed, 17 Jun 2020 19:30:08 +1000</pubDate>
+      
+      <guid>https://fpoo.github.io/docs/post-6/</guid>
+      <description>Aprender a utilizar el software de impresión 3D Ultimaker Cura a través de un diseño.</description>
     </item>
     
     <item>

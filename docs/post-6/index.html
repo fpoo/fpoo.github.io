@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>5. Impresión 3D - Fernanda Poo Cortes- Taller Fabricación 2021</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="icon" href="https://fpoo.github.io/favicon.png">
+
+  
+  
+  <link rel="stylesheet" href="/css/style.min.a32658f2eedb9bb852f8513925cb445e40633983f1ff54349b037dd04eafa2fa.css">
+  
+
+  
+
+</head>
+
+<body class='page page-default-single'>
+  <div id="main-menu-mobile" class="main-menu-mobile">
+  <ul>
+    
+    
+    <li class="menu-item-inicio">
+      <a href="/">
+        <span>Inicio</span>
+      </a>
+    </li>
+    
+    <li class="menu-item-dococumentación">
+      <a href="/docs/">
+        <span>Dococumentación</span>
+      </a>
+    </li>
+    
+  </ul>
+</div>
+  <div class="wrapper">
+    <div class='header'>
+  <div class="container">
+    <div class="logo">
+      <a href="https://fpoo.github.io/"><img alt="Logo" src="/images/logo-uai.png" /></a>
+    </div>
+    <div class="logo-mobile">
+      <a href="https://fpoo.github.io/"><img alt="Logo" src="/images/logo-uai.png" /></a>
+    </div>
+    <div id="main-menu" class="main-menu">
+  <ul>
+    
+    
+    <li class="menu-item-inicio">
+      <a href="/">
+        <span>Inicio</span>
+      </a>
+    </li>
+    
+    <li class="menu-item-dococumentación">
+      <a href="/docs/">
+        <span>Dococumentación</span>
+      </a>
+    </li>
+    
+  </ul>
+</div>
+    <button id="toggle-main-menu-mobile" class="hamburger hamburger--slider" type="button">
+  <span class="hamburger-box">
+    <span class="hamburger-inner"></span>
+  </span>
+</button>
+  </div>
+</div>
+
+
+    
+    
+    
+    
+    
+    
+
+    
+    <div class="container pt-2 pt-md-6 pb-3 pb-md-6">
+      <div class="row">
+        <div class="col-12 col-md-3 mb-3">
+          <div class="sidebar">
+            
+<div class="docs-menu">
+  <h4>Docs</h4>
+  <ul>
+    
+    <li class="">
+      <a href="https://fpoo.github.io/docs/post-1/">0.Fabricación Digital</a>
+    </li>
+    
+    <li class="">
+      <a href="https://fpoo.github.io/docs/post-2/">1.Planimetrías</a>
+    </li>
+    
+    <li class="">
+      <a href="https://fpoo.github.io/docs/post-3/">2. Mecanizado CNC</a>
+    </li>
+    
+    <li class="">
+      <a href="https://fpoo.github.io/docs/post-4/">3. Mecanizacion 2.5 ejes</a>
+    </li>
+    
+    <li class="">
+      <a href="https://fpoo.github.io/docs/post-5/">4. Simulación y Diseño Generativo</a>
+    </li>
+    
+    <li class="">
+      <a href="https://fpoo.github.io/docs/markdown/">Ejemplos Markdown</a>
+    </li>
+    
+    <li class="active ">
+      <a href="https://fpoo.github.io/docs/post-6/">5. Impresión 3D</a>
+    </li>
+    
+    <li class="">
+      <a href="https://fpoo.github.io/docs/ejemplo/">Ejemplo Shortcodes</a>
+    </li>
+    
+  </ul>
+</div>
+
+          </div>
+        </div>
+        <div class="col-12 col-md-9">
+          
+<h1 class="title">5. Impresión 3D</h1>
+<div class="content ">
+  <h2 id="impresión-3d">Impresión 3D</h2>
+<p>La impresión 3D, también llamada manufactura por adición (inglés), es un conjunto de procesos que producen objetos a través de la adición de material en capas que corresponden a las sucesivas secciones transversales de un modelo 3D. Los plásticos y las aleaciones de metal son los materiales más usados para impresión 3D, pero se puede utilizar casi cualquier cosa, desde hormigón (inglés) hasta tejido vivo.</p>
+<p>El software que utilizaremos para impresión 3D será &ldquo;Ultimaker Cura&rdquo;.</p>
+<h4 id="link-de-descarga-del-software">Link de descarga del Software:</h4>
+<p><a href="https://ultimaker.com/es/software/ultimaker-cura">https://ultimaker.com/es/software/ultimaker-cura</a></p>
+<h2 id="set-up-de-cura">Set Up de Cura</h2>
+<p>Una vez instalado el programa en nuestros computadores, debemos hacer el set up de la impresora. Vamos a <code>ADD PRINTER</code> en la barra superior y luego <code>ADD A NON-NETWORKED PRINTER</code> para trabajar offline. Dentro de la lista de impresoras escogemos la &ldquo;Creality Ender 3&rdquo;, que vendría a ser la que podemos ver en la foto.</p>
+<p><img src="/img/impresion/Ender-3.jpeg" alt="Imagen Simple"></p>
+<p>Posteriormente, debemos escoger el material con el cual la Ender estará imprimiendo. Para esto, vamos al ícono amarillo donde dice &ldquo;Generic PLA&rdquo;. Se desplegará un menú para escoger el material y el tamaño del cabezal (Nozzle Size). En este caso en material escogemos <code>eSUN</code> y luego <code>PLA+</code>, el color puede ser cualquiera. Para este caso el cabezal que utilizaremos será de 0.4mm.</p>
+<p>Posteriormente, vamos al ícono de carpeta para abrir nuestro modelo y lo ubicamos como más nos acomode utilizando la barra izquierda en el programa.</p>
+<p><img src="/img/impresion/1.png" alt="Imagen Simple"></p>
+<p>Si el producto que vamos a imprimir es curvo o irregular podremos ver algunas zonas en rojo. Esto significa que en esas partes se va a necesitar de &ldquo;soporte&rdquo;, es decir, de un relleno delgado y fácil de romper una vez impreso el objeto.</p>
+<p><img src="/img/impresion/2.png" alt="Imagen Simple"></p>
+<p>A pesar de esto, nos dejará una pequeña textura en nuestro objeto, entonces debemos ser cuidadosos y remodelar el objeto para tratar de ocupar la menor cantidad de soporte posible.</p>
+<p>Para editar los valores del material de soporte, como el ángulo o el lugar debemos seleccionar el menu la opcion <code>NOT SUPPORTED</code> y luego <code>SUPPORT</code></p>
+<p><img src="/img/impresion/support.png" alt="Imagen Simple"></p>
+<p>Para finalizar, apretamos <code>SLICE</code> y esperamos a que el programa nos genere las capas en el orden correcto que seguirá la impresora.</p>
+<div>
+    <video 
+    width="100%" 
+    height="450" 
+    autoplay muted loop controls preload>
+    <source src="/img/print.mp4"  type="video/mp4">
+    </video>
+</div>
+<p>Podemos visualizar las capas con el slider en el costado derecho y simular el movimiento que seguirá el cabezal de la impresora 3D con el slider inferior, tal como se muestra en el video. Cura nos entrega también un tiempo aproximado de impresión, que en este caso sería de 3 horas y 13 minutos.</p>
+<p>Podemos saber también el significado respectivo de cada color en nuestro al desplegar el menú <code>COLOR SCHEME</code></p>
+<p><img src="/img/impresion/colors.png" alt="Imagen Simple"></p>
+<h2 id="tiempo-de-impresión">Tiempo de Impresión</h2>
+<p>Podrán notar que 3 horas es mucho tiempo para un objeto tan pequeño como este, a pesar de su complejidad geométrica, sin embargo, esto se pude modificar para que sea menor.</p>
+<p>Para modificar el tiempo debemor ir al menú de ajustes de impresión (<code>NOT SUPPORTED</code>) y luego le damos a <code>SUPPORT</code>. Dentro de esta categoría está el ángulo en el cual se posicionará el material de soporte (&ldquo;Support Overhang Angle&rdquo;), en este caso, meintras mayor sea el ángulo, menor será el tiempo de impresión.</p>
+<p><img src="/img/impresion/time.png" alt="Imagen Simple"></p>
+<p>En este caso, el ángulo anterior era de 60º y se aumentó a 70º, esto provocó una disminución de 24 minutos de impresión (manteniendo el resto de los ajustes iguales)</p>
+<p>Otra opción que sirve para disminuir el tiempo de impresión es el <code>INFILL</code>. En esta opción modificamos el número en &ldquo;Infill Density&rdquo;, en este caso, mientras menor sea la densidad con la cual se va a rellenar el interior de las paredes de nuestro objeto, menor será el tiempo de impreisón.</p>
+<p><img src="/img/impresion/time2.png" alt="Imagen Simple"></p>
+<p>En este caso, se cambió un infill de 20% a 15% y el tiempo de impresión disminuyó en 30 minutos.</p>
+
+</div>
+</div>
+
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+  
+
+  
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/scripts.min.eaf147370baecdd07c022597db631f99cab1c9cd6479de586f30327a568d6a0f.js"></script>
+  
+
+  
+  
+  
+    
+  
+
+
+</body>
+
+</html>
