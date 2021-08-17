@@ -115,7 +115,7 @@
     </li>
     
     <li class="">
-      <a href="https://fpoo.github.io/docs/post-7/">6. Moldes</a>
+      <a href="https://fpoo.github.io/docs/post-7/">6. Creación de Moldes</a>
     </li>
     
     <li class="">
@@ -171,6 +171,7 @@
 <p>Podemos visualizar las capas con el slider en el costado derecho y simular el movimiento que seguirá el cabezal de la impresora 3D con el slider inferior, tal como se muestra en el video. Cura nos entrega también un tiempo aproximado de impresión, que en este caso sería de 3 horas y 13 minutos.</p>
 <p>Podemos saber también el significado respectivo de cada color en nuestro al desplegar el menú <code>COLOR SCHEME</code></p>
 <p><img src="/img/impresion/colors.png" alt="Imagen Simple"></p>
+<p><a href="#top">[Volver Arriba]</a></p>
 <h2 id="tiempo-de-impresión">Tiempo de Impresión</h2>
 <p>Podrán notar que 3 horas es mucho tiempo para un objeto tan pequeño como este, a pesar de su complejidad geométrica, sin embargo, esto se pude modificar para que sea menor.</p>
 <p>Para modificar el tiempo debemor ir al menú de ajustes de impresión (<code>NOT SUPPORTED</code>) y luego le damos a <code>SUPPORT</code>. Dentro de esta categoría está el ángulo en el cual se posicionará el material de soporte (&ldquo;Support Overhang Angle&rdquo;), en este caso, meintras mayor sea el ángulo, menor será el tiempo de impresión.</p>
@@ -179,6 +180,224 @@
 <p>Otra opción que sirve para disminuir el tiempo de impresión es el <code>INFILL</code>. En esta opción modificamos el número en &ldquo;Infill Density&rdquo;, en este caso, mientras menor sea la densidad con la cual se va a rellenar el interior de las paredes de nuestro objeto, menor será el tiempo de impreisón.</p>
 <p><img src="/img/impresion/time2.png" alt="Imagen Simple"></p>
 <p>En este caso, se cambió un infill de 20% a 15% y el tiempo de impresión disminuyó en 30 minutos.</p>
+<hr>
+<h1 id="optimización-del-nozzle-en-impresora-fdm">Optimización del Nozzle en impresora FDM</h1>
+<p>El nozzle o boquilla de una impresora 3D es el componente de la impresora 3D de la que sale el filamento fundido (el material con el cual se imprime), que posteriormente se coloca en la placa de impresión. Existen muchos tipos diferentes de nozzles para impresoras 3D y es importante conocer sus clasificaciones para utilizar las correctas al momento de imprimir.</p>
+<p><img src="/img/impresion/nozzles-1.jpeg" alt="Imagen Simple"></p>
+<h2 id="claisificaciópn-de-nozzles-según-material">Claisificaciópn de Nozzles según Material</h2>
+<h3 id="i-nozzle-de-latón">I. Nozzle de Latón:</h3>
+<p>Las boquillas de latón son ideales para la impresión 3D en general, cuenta con una gran conductividad y estabilidad térmica. No se sugirere utilizarla en materiales abrasivos que contengan fibras, ya que se tienden a desgastar con facilidad.</p>
+<p><img src="/img/impresion/laton.png" alt="Imagen Simple"> Imagen 1: Nozzle Latón E3D-Online. Fuente: E3D-Online</p>
+<h3 id="ii-nozzle-de-acero-endurecido">II. Nozzle de acero endurecido:</h3>
+<p>Para materiales abrasivos como el carbono, el metal y la madera, son adecuadas las boquillas recubiertas o endurecidas. Pueden ser hasta 10 veces más resistentes al desgaste y mantienen las mismas cualidades.</p>
+<p>Estas boquillas contienen plomo por lo cual no se recomienda su uso en objetos que esten en contacto con la piel o en alimentos.</p>
+<p><img src="/img/impresion/endurecido.png" alt="Imagen Simple"> Imagen 2: Nozzle Acero Endurecido E3D-Online. Fuente: E3D-Online</p>
+<h3 id="iii-nozzle-de-acero-inoxidable">III. Nozzle de acero inoxidable:</h3>
+<p>Presenta una dureza superior al latón y no contiene plomo, por lo cual está permitido su uso para la fabricación de piezas que estén en contacto con la piel o alimentos</p>
+<p><img src="/img/impresion/inoxidable.png" alt="Imagen Simple"> Imagen 3: Nozzle Acero Inoxidable E3D-Online. Fuente: E3D-Online</p>
+<h3 id="iv-nozzle-ruby">IV. Nozzle Ruby:</h3>
+<p>El Olsson Ruby es un nozzle especial, fabricado a partir de un nozzle de latón con una punta incrustada de rubí. Esta combinación es la ideal para tener una temperatura estable, una durabilidad casi infinita y una precisión de impresión inigualable.</p>
+<p><img src="/img/impresion/ruby.png" alt="Imagen Simple"> Imagen 4: Nozzle Olsson Ruby. Fuente: Olsson Ruby</p>
+<h3 id="tamaños-de-nozzle">Tamaños de Nozzle</h3>
+<p>El nozzle por defecto es 0.4mm, esto queire decir que el filamento al pasar por el extrusor o Hotend, la salida de este filamento es de 0.4 mm. Junto con esto, a esta medida de 0.4 mm le corresponde un 50% en altura de capa, eso correspondería a un 0.2 mm en Z.</p>
+<p>Sin embargo, podemos ocupar la altura de capa a 0.32 mm o 0.08 mm, lo importante es que deben ser números par siempre.</p>
+<p>Similarmente, en el nozzle de 0.2 mm, le corresponde una altura de 0.1 mm, pero puede ser modificada.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Diámetro de salida (mm)</th>
+<th style="text-align:center">Altura de capa max. recomendada (mm)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">0.25</td>
+<td style="text-align:center">0.2</td>
+</tr>
+<tr>
+<td style="text-align:center">0.4</td>
+<td style="text-align:center">0.32</td>
+</tr>
+<tr>
+<td style="text-align:center">0.6</td>
+<td style="text-align:center">0.48</td>
+</tr>
+<tr>
+<td style="text-align:center">0.8</td>
+<td style="text-align:center">0.64</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0.8</td>
+</tr>
+<tr>
+<td style="text-align:center">1.2</td>
+<td style="text-align:center">0.96</td>
+</tr>
+</tbody>
+</table>
+<p><a href="#top">[Volver Arriba]</a></p>
+<h3 id="optimización-del-tiempo">Optimización del tiempo:</h3>
+<p>Una manera que tenemos para optimizar el tiempo de impresión de nuestro objeto 3D es cambiando los tipos de nozzle o de altura de capas en el Ultimaker Cura.</p>
+<p>Siguiendo con el mismo objeto anterior, nos vamos a las opciones de impresión y seleccionamos <code>QUALITY</code> para modificar la altura de capa. Para este caso, dejaré el mismo nozzle de 0.4 mm con una altura de 0.32 mm.</p>
+<p>En este caso, el tiempo de impresión sería de 2 horas y 56 minutos.</p>
+<p><img src="/img/impresion/layer.png" alt="Imagen Simple"></p>
+<p>Si nos acercamos una de las capas de nuestro objeto en <code>PREVIEW</code> podremos observar el grosor del filamento.</p>
+<p><img src="/img/impresion/thick0.png" alt="Imagen Simple"></p>
+<p>A modo de ejemplo, podemos intentar lo mismo con un nozzle más grande. Manteniendo la misma altura entre capas, el tiempo disminuye a 1 hora y 50 minutos.</p>
+<p><img src="/img/impresion/layer2.png" alt="Imagen Simple"></p>
+<p>En contraste con el grosor del filamento del nozzle 0.4 mm claramente se puede ver que este es más grueso y menos detallado, razón por la cual el tiempo de impresión es menor.</p>
+<p><img src="/img/impresion/thick.png" alt="Imagen Simple"></p>
+<p>Este tipo de configuración nos da un acabado claramente más robusto, por lo cual si necesitamos prototipar de manera rápida, ugilizar este tipo de configuración es muy recomendable, ya que la pieza queda funcional.</p>
+<p>Por lo tanto va en nuestro criterio y en nuestras necesidades, si buscamos un objeto más detallado y con un acabado más completo, utilizamos un tamaño entre capas pequeño y un nozzle con menor tamaño de extrución, sin embargo, puede llegar a demorarse más de un día dependiendo si el objeto es muy complejo o no. Por otro lado, si nos interesa prototipar algo o ver la funcionalidad del objeto en si en lugar de la calidad, podemos ocupar nozzles más grandes (como el de 1 mm) y tanaños de capas mayores.</p>
+<p><a href="#top">[Volver Arriba]</a></p>
+<hr>
+<h1 id="impresión-sla">Impresión SLA.</h1>
+<p><img src="/img/impresion/sla.jpeg" alt="Imagen Simple"></p>
+<p>La técnica de impresión SLA o estereolitografía utiliza el principio de fotopolimerización para crear modelos 3D a partir de resinas sensible a los rayos UV, las cuales se solidifican mediante el paso de un láser capa por capa, logrando una mayor calidad a los modelos hechos con esta tecnología.</p>
+<h2 id="contexto-historico">Contexto historico</h2>
+<p>El proceso de impresión estereolitográfica aparece en la década de los 70, cuando el investigador Hideo Kodama inventó el enfoque impresión por capas, que usa luz ultravioleta para curar polímeros fotosensibles.</p>
+<p>Sin embargo, la impresión 3D SLA no fue la primera tecnología de impresión 3D en ganar popularidad. Cuando las patentes empezaron a caducar a finales de los 2000, la introducción de pequeñas impresoras 3D de escritorio abrió camino a la fabricación aditiva, y el modelado por deposición fundida (FDM) fue el primer método que se adoptó en esas plataformas de escritorio. Aunque esta tecnología asequible basada en la extrusión hizo que el público comenzara a conocer y adoptar la impresión 3D, las impresoras FDM no satisfacían todo el espectro de necesidades profesionales.</p>
+<p><img src="/img/impresion/form1.jpg" alt="Imagen Simple"> Prototipos de la Form 1, la primera impresora 3D SLA de escritorio. Fuente: formlabs.com</p>
+<p><a href="#top">[Volver Arriba]</a></p>
+<h2 id="cómo-funciona-la-técnica-sla">¿Cómo funciona la técnica SLA?</h2>
+<p>Al igual que con cualquier técnica de impresión 3D, se requiere un archivo digital en 3D. Esto se puede obtener a través del software CAD, a menudo en formato STL. Posteriormente se envía a la máquina, donde un segundo software (llamado slicer) realiza un corte del modelo en capas delgadas de impresión de un espesor fijo que ya vimos y analizamos anteriormente. Finalmente se le da la orden a la impresora de comenzar a imprimir.</p>
+<p>Las impresoras 3D SLA utilizan materiales termoendurecibles reactivos a la luz que denominamos &ldquo;resinas&rdquo;. Cuando se exponen las resinas de SLA a determinadas longitudes de onda de luz, se unen cadenas moleculares cortas, con lo que los monómeros y oligómeros se polimerizan en geometrías rígidas o flexibles solidificadas.</p>
+<div>
+    <video 
+    width="100%" 
+    height="450" 
+    autoplay muted loop controls preload>
+    <source src="/img/SLA.mp4"  type="video/mp4">
+    </video>
+</div>
+<h2 id="preform">PreForm</h2>
+<p>Para entender de mejor manera el proceso, utilizaremos el software &ldquo;PreForm&rdquo; de Formlabs para impresión SLA.</p>
+<ul>
+<li>Link de descarga:
+<a href="https://formlabs.com/latam/software/#preform">https://formlabs.com/latam/software/#preform</a></li>
+</ul>
+<p>Una vez instalado el programa, abrimos cualquier archivo STL y escogemos en el menú derecho en <code>JOB INFO</code> &gt; <code>PRINTER</code> la Form 3, con la cual estaremos trabajando en este ejercicio.</p>
+<p><img src="/img/impresion/preform.png" alt="Imagen Simple"></p>
+<ul>
+<li>Para saber más sobre la impresora Form 3: <a href="https://formlabs.com/latam/3d-printers/form-3/">https://formlabs.com/latam/3d-printers/form-3/</a></li>
+</ul>
+<p>Dentro del menú de las impresoras podemos escoger nuestro color y tipo de resina y el grosor o altura de la capa. En este caso utilizaremos en grosor medio de 0.05 mm o 50 micrones.</p>
+<p><img src="/img/impresion/preformsetup.png" alt="Imagen Simple"></p>
+<h3 id="soportes">Soportes</h3>
+<p>Como vimos anteriormente, los soportes son necesarios en algunas ocasiones ya que habrán capas en el objeto que están &ldquo;en el aire&rdquo;. En este caso, también debemos hacer un setup para los soportes, sin embargo, PreForm nos ofrece una previsualización de cómo se verá el objeto impreso con los soportes.</p>
+<p><img src="/img/impresion/soporte.png" alt="Imagen Simple"></p>
+<p>
+<link rel="stylesheet" href="/css/hugo-easy-gallery.css" />
+
+<div class="gallery caption-position-bottom caption-effect-slide hover-effect-zoom hover-transition" itemscope itemtype="http://schema.org/ImageGallery">
+				<div class="box">
+				  <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+				    <div class="img" style="background-image: url('https://fpoo.github.io//img/impresion/galeria1//1.png');" >
+				      <img itemprop="thumbnail" src="https://fpoo.github.io//img/impresion/galeria1//1.png" alt="1st" />
+				    </div>
+			      <figcaption>
+		          <p>1st</p>
+			      </figcaption>
+				    <a href="https://fpoo.github.io//img/impresion/galeria1//1.png" itemprop="contentUrl"></a>
+				  </figure>
+				</div>
+				<div class="box">
+				  <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+				    <div class="img" style="background-image: url('https://fpoo.github.io//img/impresion/galeria1//2.png');" >
+				      <img itemprop="thumbnail" src="https://fpoo.github.io//img/impresion/galeria1//2.png" alt="2nd" />
+				    </div>
+			      <figcaption>
+		          <p>2nd</p>
+			      </figcaption>
+				    <a href="https://fpoo.github.io//img/impresion/galeria1//2.png" itemprop="contentUrl"></a>
+				  </figure>
+				</div>
+				<div class="box">
+				  <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+				    <div class="img" style="background-image: url('https://fpoo.github.io//img/impresion/galeria1//3.png');" >
+				      <img itemprop="thumbnail" src="https://fpoo.github.io//img/impresion/galeria1//3.png" alt="3rd" />
+				    </div>
+			      <figcaption>
+		          <p>3rd</p>
+			      </figcaption>
+				    <a href="https://fpoo.github.io//img/impresion/galeria1//3.png" itemprop="contentUrl"></a>
+				  </figure>
+				</div>
+</div>
+ 
+
+
+
+  
+
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="/js/load-photoswipe.js"></script>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+</p>
+<p>En este caso, el soporte se autogenerará, sin embargo, puede que existan soportes que no son necesarios y para arreglarlo, podemos simplemente editar los soportes en <code>EDIT ALL</code>. Una vez en el menú, nos ubicamos en la última capa, de tal manera que muestre todo el objeto. Aquí podremos ver unas pequeñas pelotitas blancas incrustadas en nuestro objeto. Estas son las zonas en donde se ubican los soportes.</p>
+<p><img src="/img/impresion/edit.png" alt="Imagen Simple"></p>
+<p>Vamos apretando todas las zonas que consideremos innecesarias o que esten demás hasta quedar con los soportes suficientes.</p>
+<p><img src="/img/impresion/real.jpeg" alt="Imagen Simple"> Modelo creado con tecnologías SLA. Fuente: <a href="https://www.3dnatives.com/">https://www.3dnatives.com/</a></p>
+<p>Finalmente, le damos a <code>Guardar Como</code> para guardar nuestro archivo.</p>
+<hr>
+<h2 id="fdm-o-sla">¿FDM o SLA?</h2>
+<p>En mi opinión, encuentro que es importante saber las diferencias entre ambas técnicas. Empezando con que SLA fue la primera técnica de impresión 3D conocida. Sus primeros desarrollos comienzan en 1986 cuando Chuck Hull, fundador de 3D Systems, registra la primera patente comercial de la que es la tecnología de fotopolimerización de una resina a través de láser. Años después surgió la tecnología DLP, basada en la misma técnica, pero utilizando luz generada por un proyector.</p>
+<p>Años después en 1988 Scott Crump, fundador del otro gigante de la impresión 3D, Stratasys, da a conocer las primeras máquinas de deposición de material fundido FDM. Adquiriendo gran popularidad estas últimas debido a su fácil manejo y a su precio más reducido en comparación con las otras tecnologías.</p>
+<h3 id="materiales">Materiales:</h3>
+<p>También es importante diferenciarlas por los tipos de materiales que utilizan, siendo la FDM de más fácil acceso y la más económica, al igual que sus materiales. Los más báscios son los plásticos PLA y ABS. Algunas marcas han desarrollado sus propios filamentos adaptados a sus máquinas como es el caso de Zortrax.</p>
+<p>Por otro lado, las impresoras SLA utiliza resinas, con un rango de colores más limitados y a un precio más alto. La diferencia aquí es que las resinas son difícilmente intercambiables, con lo cual dependemos exclusivamente de los desarrollos del fabricantes.</p>
 
 </div>
 </div>
