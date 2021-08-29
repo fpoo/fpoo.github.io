@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>7. Patrones - Fernanda Poo Cortes- Taller Fabricación 2021</title>
+  <title>7. Sketch Paramétrico - Fernanda Poo Cortes- Taller Fabricación 2021</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
   <link rel="icon" href="https://fpoo.github.io/favicon.png">
@@ -119,7 +119,7 @@
     </li>
     
     <li class="active ">
-      <a href="https://fpoo.github.io/docs/post-8/">7. Patrones</a>
+      <a href="https://fpoo.github.io/docs/post-8/">7. Sketch Paramétrico</a>
     </li>
     
     <li class="">
@@ -131,11 +131,15 @@
     </li>
     
     <li class="">
-      <a href="https://fpoo.github.io/docs/ejemplo/">Ejemplo Shortcodes</a>
+      <a href="https://fpoo.github.io/docs/post-11/">11. Exámen</a>
     </li>
     
     <li class="">
       <a href="https://fpoo.github.io/docs/markdown/">Ejemplos Markdown</a>
+    </li>
+    
+    <li class="">
+      <a href="https://fpoo.github.io/docs/ejemplo/">Ejemplo Shortcodes</a>
     </li>
     
   </ul>
@@ -145,9 +149,223 @@
         </div>
         <div class="col-12 col-md-9">
           
-<h1 class="title">7. Patrones</h1>
+<h1 class="title">7. Sketch Paramétrico</h1>
 <div class="content ">
+  <p>En el siguiento post se explica el proceso de un sketch paramétrico, el cual nos ayuda a entender la geometría de un objeto para su posterior modelado.</p>
+<p><img src="/img/complementario2/ej.jpeg" alt="Imagen Simple"></p>
+<p>La lógica que tiene este proceso es partiendo con un sketch dibujado desde una perspectiva 2D. Esto nos permite entender la geometría básica de lo que queremos modelar. Luego llevamos este dibujo o bosquejo a Fusion 360 para realizar el sketch paramétrico.</p>
+<h3 id="calibrado-de-imágen">Calibrado de imágen</h3>
+<p>Nuestra imagen de referencia es la siguiente:</p>
+<p><img src="/img/complementario2/tutorial-1.jpeg" alt="Imagen Simple"></p>
+<p>En Fusion 360 importamos la imagen en <code>INSERT</code> y la alineamos con el plano frontal. Podemos escalarla como nos acomode.</p>
+<p><img src="/img/complementario2/size.png" alt="Imagen Simple"></p>
+<p>Podemos notar que la foto de referencia está volteada. Para realozar un mirror vamos a la capa en donde se ubica nuestra foto, le damos doble click y luego <code>Edit Canvas</code>, a lo que aparecerán los comandos para voltearla.</p>
+<p><img src="/img/complementario2/mirror.png" alt="Imagen Simple"></p>
+<p>Ubicamos nuestro dibujo al centro del origen y terminamos.</p>
+<p><img src="/img/complementario2/0.png" alt="Imagen Simple"></p>
+<p>Para calibrar la imágen volvemos a hacer doble click en la capa de nuestra imagen y seleccionamos <code>Calibrate</code>. Esto nos permitirá escalar la imagen de acuerdo a las dimensiones reales, como se ve en el video.</p>
+<div>
+    <video 
+    width="100%" 
+    height="450" 
+    autoplay muted loop controls preload>
+    <source src="/img/calibrar.mp4"  type="video/mp4">
+    </video>
+</div>
+<h3 id="sketch">Sketch</h3>
+<ul>
+<li>Para comenzar el dibujo paramétrico nos vamos a <code>SKETCH</code> y seleccionamos el plano frontal. En esta primera etapa definiremos el ancho y alto de nuestro modelo.</li>
+</ul>
+<div>
+    <video 
+    width="100%" 
+    height="450" 
+    autoplay muted loop controls preload>
+    <source src="/img/altoyancho.mp4"  type="video/mp4">
+    </video>
+</div>
+<p>-posterior a esto, realizaremos el arco y las líneas que se encuentran en el interior.</p>
+<p><img src="/img/complementario2/alto5.png" alt="Imagen Simple"></p>
+<div>
+    <video 
+    width="100%" 
+    height="450" 
+    autoplay muted loop controls preload>
+    <source src="/img/arco.mp4"  type="video/mp4">
+    </video>
+</div>
+<p>Una vez finalizado el sketch con sus parámetros, seleccionamos &ldquo;finalizar sketch&rdquo; y podríamos ver algo como esto:</p>
+<p><img src="/img/complementario2/sketch.png" alt="Imagen Simple"></p>
+<p>Debido a que hicimos todo nuestro sketch basandonos en los 2000 mm, si cambiamos este valor, todo nuestro sketch se verá escalado de manera uniforme, lo cual nos permite editar de manera más fácil y rápida las dimensiones de nuestro modelo.</p>
+<ul>
+<li>Posteriormente, realizaremos los tubos que conforman nuestro modelo:</li>
+</ul>
+<div>
+    <video 
+    width="100%" 
+    height="450" 
+    autoplay muted loop controls preload>
+    <source src="/img/puntos.mp4"  type="video/mp4">
+    </video>
+</div>
+<p><code>La razón por la cual se utilizan medidas de 30 mm para los tubos es por que es un stardar de medidas de tubos PVC.</code></p>
+<p>Luego, con la herramienta <code>PIPE</code> le damos volúmen a los tubos basandonos en los puntos que escogimos:</p>
+<div>
+    <video 
+    width="100%" 
+    height="450" 
+    autoplay muted loop controls preload>
+    <source src="/img/pipe.mp4"  type="video/mp4">
+    </video>
+</div>
+<h3 id="patrones">Patrones</h3>
+<p>En este paso repetiremos cuantas veces necesitemos nuestro modelo. En este caso, queremos formar una estructura de 3600 mm (o 3.6 metros) de largo:</p>
+<div>
+    <video 
+    width="100%" 
+    height="450" 
+    autoplay muted loop controls preload>
+    <source src="/img/pattern.mp4"  type="video/mp4">
+    </video>
+</div>
+<p>Solo para seguir con el orden de los parámetros como lo hemos hecho hasta ahora, vamos a <code>MODIFY &gt; Change Parameters</code> y lo que correspondería a la cantidad de tubos o patrones realizados, sería nuestro largo.</p>
+<p><img src="/img/complementario2/largo.png" alt="Imagen Simple"></p>
+<h3 id="envolvente">Envolvente</h3>
+<p>Partimos desde nuestro sketch original, por lo cula necesitamos apagar el resto de las capas.</p>
+<p>Abrimos un <code>SKETCH</code> en este plano de trabajo.</p>
+<p><img src="/img/complementario2/sketch.png" alt="Imagen Simple"></p>
+<ul>
+<li>Una vez acá, podemos apretar la tecla <code>P</code> para abrir la opción de proyect.</li>
+<li>Seleccionamos el arco y luego <code>OFFSET</code>. En la casilla de valores ingresamos &ldquo;tubo/2+1&rdquo;, tal como se muestra en el video.</li>
+<li>Hacemos otro <code>OFFSET</code> tomando el mismo arco original y a este le ingresamos un valor de &ldquo;tubo/2+3&rdquo;.</li>
+<li>unimos ambas curvas con pequeñas líneas en sus bordes. Esto generará un área en el interior. Finalizamos el Sketch</li>
+<li>Al área generada entre ambas líneas realizamos un <code>EXTRUDE</code> apretando la tecla <code>E</code>. El valor que ingresaremos será el de 3600 mm.</li>
+</ul>
+<div>
+    <video 
+    width="100%" 
+    height="450" 
+    autoplay muted loop controls preload>
+    <source src="/img/extrude.mp4"  type="video/mp4">
+    </video>
+</div>
+<ul>
+<li>Solo a modo de visualizarlo mejor, la apariencia del body extruido se le aplicó un plastico transparente.</li>
+</ul>
+<h3 id="objeto-final">Objeto final:</h3>
+<p>
+<link rel="stylesheet" href="/css/hugo-easy-gallery.css" />
+
+<div class="gallery caption-position-bottom caption-effect-slide hover-effect-zoom hover-transition" itemscope itemtype="http://schema.org/ImageGallery">
+				<div class="box">
+				  <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+				    <div class="img" style="background-image: url('https://fpoo.github.io//img/complementario2/gal1//final.png');" >
+				      <img itemprop="thumbnail" src="https://fpoo.github.io//img/complementario2/gal1//final.png" alt="Final" />
+				    </div>
+			      <figcaption>
+		          <p>Final</p>
+			      </figcaption>
+				    <a href="https://fpoo.github.io//img/complementario2/gal1//final.png" itemprop="contentUrl"></a>
+				  </figure>
+				</div>
+				<div class="box">
+				  <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+				    <div class="img" style="background-image: url('https://fpoo.github.io//img/complementario2/gal1//final2.png');" >
+				      <img itemprop="thumbnail" src="https://fpoo.github.io//img/complementario2/gal1//final2.png" alt="Final2" />
+				    </div>
+			      <figcaption>
+		          <p>Final2</p>
+			      </figcaption>
+				    <a href="https://fpoo.github.io//img/complementario2/gal1//final2.png" itemprop="contentUrl"></a>
+				  </figure>
+				</div>
+				<div class="box">
+				  <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+				    <div class="img" style="background-image: url('https://fpoo.github.io//img/complementario2/gal1//final3.png');" >
+				      <img itemprop="thumbnail" src="https://fpoo.github.io//img/complementario2/gal1//final3.png" alt="Final3" />
+				    </div>
+			      <figcaption>
+		          <p>Final3</p>
+			      </figcaption>
+				    <a href="https://fpoo.github.io//img/complementario2/gal1//final3.png" itemprop="contentUrl"></a>
+				  </figure>
+				</div>
+</div>
+ 
+
+
+
   
+
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="/js/load-photoswipe.js"></script>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+</p>
+<p><img src="/img/complementario2/p1.png" alt="Imagen Simple">
+<img src="/img/complementario2/p2.png" alt="Imagen Simple"></p>
+<div>
+    <iframe 
+    src='https://alumnos4812.autodesk360.com/g/shares/SH9285eQTcf875d3c53943a15865bf9c81da?mode=embed'
+    width="100%" 
+    height="450" 
+    allowfullscreen="true" 
+    webkitallowfullscreen="true" 
+    mozallowfullscreen="true"  
+    frameborder="0">
+    </iframe>    
+</div>
+
 </div>
 </div>
 
